@@ -1,0 +1,14 @@
+[
+    {"name": "Aristotle",
+    "img": "http://fancey.ca/faces/aristotle.png"
+    },
+    {"name": "Plato",
+    "img": "http://venturetraining.net/wp-content/uploads/2014/10/Plato.png"
+    },
+    {"name": "Socrates",
+    "img": "http://www.yellowshoe.com.au/images/socrates.png"
+    },
+    {"name": "Plutarch",
+    "img": "http://synanthropia.com/asset/img/plutarch.png"
+    }
+]

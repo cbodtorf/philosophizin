@@ -1,0 +1,65 @@
+///header///
+header {
+  text-decoration: underline;
+}
+
+
+///players///
+.players {
+  button {
+    display: block;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  li {
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;
+  }
+}
+
+footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+}
+
+
+
+////cats/////
+.cat-wrap {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  div {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
+    width: 18%;
+    cursor: pointer;
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+}
