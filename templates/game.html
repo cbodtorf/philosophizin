@@ -1,0 +1,30 @@
+<!-- Category Select ng-controller="CategoryController"-->
+
+
+<section>
+    <h3>Random Categories</h3>
+    <!-- forEach Category repeating div -->
+
+    <div class="cat-wrap">
+
+        <!-- <button ng-click="genQ()"> gen quests</button> -->
+        <section class="cat" ng-repeat="cats in categories | limitTo: 5" data-id="{{ cats.category.id }}">
+            <span>{{ cats[0].category.title }}</span>
+            <div class="quest" ng-repeat='cats in categories | limitTo: 5' ng-click='qClick(cats[$index])'>
+                <span>{{cats[$index].value}}</span>
+            </div>
+        </section>
+    </div>
+
+    <!-- question appears on click -->
+    <div class="q-wrap">
+
+        <div class="questFull">
+            <h3>And the Question is: </h3>
+            <span>{{ question }}</span>
+        </div>
+        <input type="text" name="answer" placeholder="type your answer here" value="">
+        <button type="button" name="submit">submit answer</button>
+    </div>
+
+</section>

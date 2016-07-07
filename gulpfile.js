@@ -4,10 +4,15 @@ let babel = require('gulp-babel');
 let browserify = require('gulp-browserify');
 
 // Default runner
-gulp.task('default', ['html','css','js']);
+gulp.task('default', ['html','tmpl','css','js']);
 
 gulp.task('html', function() {
     gulp.src('./index.html')
+    .pipe(gulp.dest('./public'));
+});
+
+gulp.task('tmpl', function() {
+    gulp.src('./templates/*.html')
     .pipe(gulp.dest('./public'));
 });
 
@@ -29,6 +34,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
   gulp.watch('./css/*.scss', ['css']);
   gulp.watch('./index.html', ['html']);
+  gulp.watch('./templates/*.html', ['tmpl']);
   gulp.watch('./js/*.js', ['js']);
   gulp.watch('./js/*/*.js', ['js']);
 });

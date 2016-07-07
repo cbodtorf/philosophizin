@@ -40,12 +40,24 @@ footer {
   justify-content: space-between;
   width: 100%;
   margin: 0 auto; }
-  .cat-wrap div {
+  .cat-wrap section {
     text-align: center;
     border: 2px solid black;
     border-radius: 10px;
     padding: 3px;
     width: 18%;
-    cursor: pointer; }
-    .cat-wrap div:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+    .cat-wrap section span {
+      margin: 10px; }
+  .cat-wrap .quest {
+    cursor: pointer;
+    width: 90%;
+    padding: 3px;
+    padding-top: 10px;
+    vertical-align: bottom;
+    border: 2px solid black;
+    border-radius: 10px; }
+    .cat-wrap .quest:hover {
       background-color: lightgray; }

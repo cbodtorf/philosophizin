@@ -1,0 +1,14 @@
+<!-- Player Select ng-controller="PlayerController"-->
+<section class="players">
+    <h3>Choose your Philosopher</h3>
+    <button id="showP" ng-click="show()">Show</button>
+
+    <!-- forEach Philosopher repeating li -->
+    <ul id='philos'>
+        <li ng-repeat="philosophers in players" data-id="{{ $index }}">
+            {{ philosophers.name }}
+            <img ng-click="isClickEnabled || playerChoose()" ng-src="{{ philosophers.img }}" alt="" />
+        </li>
+    </ul>
+
+</section>

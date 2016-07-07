@@ -9,56 +9,24 @@
         <!--STYLES-->
         <link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <!-- MAIN -->
-        <div id="layout">
+        <header>
+            <h2>Philosophizin'</h2>
+            <a href="#/player">player</a>
+            <a href="#/game">game</a>
+        </header>
 
-            <header>
-                <h2>Philosophizin'</h2>
-            </header>
-            <!-- Player Select -->
-            <section ng-controller="PlayerController" class="players">
-                <h3>Choose your Philosopher</h3>
-                <button id="showP" ng-click="show()">Show</button>
-
-                <!-- forEach Philosopher repeating li -->
-                <ul id='philos'>
-                    <li ng-repeat="philosophers in players" data-id="{{ $index }}">
-                        {{ philosophers.name }}
-                        <img ng-click="isClickEnabled || playerChoose()" src="{{ philosophers.img }}" alt="" />
-                    </li>
-                </ul>
-
-            </section>
-            <!-- Category Select -->
-            <section ng-controller="CategoryController">
-                <h3>Random Categories</h3>
-                <button id="showC" ng-click="show()">Show</button>
-
-                <!-- forEach Category repeating div -->
-                <div class="cat-wrap">
-                    <div class="cat" ng-repeat="cats in categories | limitTo: 5" data-id="{{ $index }}">
-                        {{ cats.title }}
-                    </div>
-                </div>
+        <div ng-view id="view">
 
 
-            </section>
-            <section ng-controller="QuestionController">
-              <div class="q-wrap">
-                  <div class="quest" ng-repeat="q in questions | limitTo: 5" data-id="{{ $index }}">
-                      {{ q.value }}
-                  </div>
-              </div>
-
-
-            </section>
-            <footer>
-                <h6>by: me</h6>
-            </footer>
         </div>
+        <footer>
+            <h6>by: me</h6>
+        </footer>
 
         <!--SCRIPTS-->
         <!-- <script src="./angular.js"></script> -->

@@ -9,27 +9,20 @@ module.exports = function (app) {
 
 
     app.controller('CategoryController', ['$scope', 'jService', function($scope, jService) {
-        $scope.categories = [];
+
+        //[0] is single [1] is double
+        $scope.categories = jService.getCatIds()[0];
+
+        // current question
+        $scope.question = jService.getQ();
 
 
-        /*******************************
-        * Grabs category title and id.
-        * Saving in jService and this Controller.
-        ********************************/
-        $scope.show = function() {
-            $scope.innerHTML = '';
-
-            jService.getCats(function(response) {
-
-                response.data.forEach(function(e){
-                  $scope.categories.push({title: e.category.title, id: e.category.id});
-                  jService.cats.push({title: e.category.title, id: e.category.id});
-
-                });
-                  // hides button
-                  document.getElementById("showC").style.display = 'none';
-            });
-          };
+        //q equal question (but really this is the master list)
+        // this displays the question
+        $scope.qClick = function(q) {
+          jService.setQ(q);
+          $scope.question = jService.getQ();
+        }
 
 
 
